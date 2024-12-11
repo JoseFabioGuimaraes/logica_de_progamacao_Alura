@@ -1,6 +1,5 @@
 alert('Boas vindas ao jogo do número secreto');
-let numeroSecreto = 9;
-console.log(numeroSecreto);
+let numeroSecreto = parseInt(Math.random() * 100 + 1); //
 let chute ;
 let count = 0;
 
@@ -18,11 +17,7 @@ while (chute != numeroSecreto){
             alert(`O número secreto é menor que  ${chute}`);
         }
     }
-
 }
-if(count > 1){
-    alert(`Isso ai! Você descobriu o número secreto ${numeroSecreto}; Você descobriu com ${count} tentativas`);
 
-} else{
-    alert(`Isso ai! Você descobriu o número secreto ${numeroSecreto}; Você descobriu com ${count} tentativa`);
-}
+let palavraCount = count > 1 ? 'tentativas' : 'tentativa'
+alert(`Isso ai! Você descobriu o número secreto ${numeroSecreto}; Você descobriu com ${count} ${palavraCount}`);
