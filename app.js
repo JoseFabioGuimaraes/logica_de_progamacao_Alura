@@ -8,7 +8,8 @@ exibirTextoNatela('h1','Jogo do número secreto')
 exibirTextoNatela('p', 'Escolha um número de 1 a 10')
 
 function verificarChute(){
-    console.log(numeroSecreto)
+    let chute = document.querySelector('input').value;
+    console.log(chute == numeroSecreto)
 };
 
 function gerarNumeroAleatorio() {
