@@ -1,5 +1,7 @@
+let NumerosSorteados = [];
 let numeroSecreto = gerarNumeroAleatorio();
 let tentativas = 1;
+
 function exibirTextoNatela(tag, texto){
     let campo = document.querySelector(tag);
     campo.innerHTML = texto;
@@ -38,7 +40,14 @@ function verificarChute(){
 };
 
 function gerarNumeroAleatorio() {
-    return parseInt(Math.random() * 10+1);
+    let numeroEscolhido =  parseInt(Math.random() * 10+1);
+    if (NumerosSorteados.includes(numeroEscolhido)){
+        return gerarNumeroAleatorio();
+    } else {
+        NumerosSorteados.push(numeroEscolhido);
+        console.log(NumerosSorteados);
+        return numeroEscolhido;
+    }
 }
 
 function reiniciarJogo(){
